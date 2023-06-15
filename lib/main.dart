@@ -1,3 +1,4 @@
+import 'package:aeroplane/ui/pages/get_started_page.dart';
 import 'package:aeroplane/ui/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -8,9 +9,12 @@ class MayApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashPage(),
+      routes: {
+        '/': (context) => const SplashPage(),
+        '/get-started': (context) => const GetStartedPage()
+      },
     );
   }
 }
