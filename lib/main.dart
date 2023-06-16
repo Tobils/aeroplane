@@ -1,4 +1,6 @@
+import 'package:aeroplane/ui/pages/bonus_page.dart';
 import 'package:aeroplane/ui/pages/get_started_page.dart';
+import 'package:aeroplane/ui/pages/sign_up_page.dart';
 import 'package:aeroplane/ui/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,9 @@ class MayApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const SplashPage(),
-        '/get-started': (context) => const GetStartedPage()
+        '/get-started': (context) => const GetStartedPage(),
+        '/sign-up': (context) => const SignUpPage(),
+        '/bonus': (context) => const BonusPage()
       },
     );
   }
