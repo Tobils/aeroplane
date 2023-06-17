@@ -34,6 +34,7 @@ class DestinationCard extends StatelessWidget {
             height: 220,
             decoration: BoxDecoration(
               image: DecorationImage(
+                fit: BoxFit.cover,
                 image: AssetImage(imageUrl),
               ),
               borderRadius: BorderRadius.circular(18),
@@ -56,7 +57,7 @@ class DestinationCard extends StatelessWidget {
                     Container(
                       width: 20,
                       height: 20,
-                      margin: EdgeInsets.only(right: 5),
+                      margin: const EdgeInsets.only(right: 5),
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage('assets/icon_star.png'),
@@ -76,7 +77,7 @@ class DestinationCard extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(left: 10),
+            margin: const EdgeInsets.only(left: 10),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

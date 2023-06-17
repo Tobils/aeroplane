@@ -1,5 +1,6 @@
 import 'package:aeroplane/shared/theme.dart';
 import 'package:aeroplane/ui/widgets/destination_card.dart';
+import 'package:aeroplane/ui/widgets/destination_tile.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -68,15 +69,21 @@ class HomePage extends StatelessWidget {
                 rating: 4.5,
               ),
               DestinationCard(
-                imageUrl: 'assets/image_destination3.png',
+                imageUrl: 'assets/image_destination2.png',
                 name: 'White House',
                 location: 'Spain',
                 rating: 4.8,
               ),
               DestinationCard(
-                imageUrl: 'assets/image_destination4.png',
+                imageUrl: 'assets/image_destination3.png',
                 name: 'Hill Heyo',
                 location: 'Monaco',
+                rating: 4.9,
+              ),
+              DestinationCard(
+                imageUrl: 'assets/image_destination4.png',
+                name: 'Tokyo',
+                location: 'Japan',
                 rating: 4.9,
               ),
             ],
@@ -85,10 +92,63 @@ class HomePage extends StatelessWidget {
       );
     }
 
+    Widget newDestinations() {
+      return Container(
+        margin: EdgeInsets.only(
+          left: defaultMargin,
+          right: defaultMargin,
+          top: 30,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "New This Year",
+              style: blackTextStyle.copyWith(
+                fontSize: 18,
+                fontWeight: semiBold,
+              ),
+            ),
+            const DestinationTile(
+              imageUrl: 'assets/image_destination6.png',
+              name: "Danau Beratan",
+              location: "Singajaya",
+              rating: 4.4,
+            ),
+            const DestinationTile(
+              imageUrl: 'assets/image_destination7.png',
+              name: "Danau Beratan",
+              location: "Singajaya",
+              rating: 4.4,
+            ),
+            const DestinationTile(
+              imageUrl: 'assets/image_destination8.png',
+              name: "Danau Beratan",
+              location: "Singajaya",
+              rating: 4.4,
+            ),
+            const DestinationTile(
+              imageUrl: 'assets/image_destination9.png',
+              name: "Danau Beratan",
+              location: "Singajaya",
+              rating: 4.4,
+            ),
+            const DestinationTile(
+              imageUrl: 'assets/image_destination10.png',
+              name: "Danau Beratan",
+              location: "Singajaya",
+              rating: 4.4,
+            ),
+          ],
+        ),
+      );
+    }
+
     return ListView(
       children: [
         header(),
         popularDestinations(),
+        newDestinations(),
       ],
     );
   }
