@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget header() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
           left: defaultMargin,
           right: defaultMargin,
           top: 30,
@@ -94,7 +94,7 @@ class HomePage extends StatelessWidget {
 
     Widget newDestinations() {
       return Container(
-        margin: EdgeInsets.only(
+        margin: const EdgeInsets.only(
             left: defaultMargin, right: defaultMargin, top: 30, bottom: 140),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

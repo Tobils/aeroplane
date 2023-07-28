@@ -1,4 +1,5 @@
 import 'package:aeroplane/shared/theme.dart';
+import 'package:aeroplane/ui/pages/choose_seat_page.dart';
 import 'package:aeroplane/ui/widgets/custom_button.dart';
 import 'package:aeroplane/ui/widgets/interest_item.dart';
 import 'package:aeroplane/ui/widgets/photo_item.dart';
@@ -13,7 +14,7 @@ class DetailPage extends StatelessWidget {
       return Container(
         width: double.infinity,
         height: 450,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage("assets/image_destination1.png"))),
@@ -23,7 +24,7 @@ class DetailPage extends StatelessWidget {
     Widget customeShadow() {
       return Container(
         height: 214,
-        margin: const EdgeInsets.only(top: 235),
+        margin: EdgeInsets.only(top: 235),
         width: double.infinity,
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -40,7 +41,7 @@ class DetailPage extends StatelessWidget {
     Widget content() {
       return Container(
         width: double.infinity,
-        margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
+        margin: EdgeInsets.symmetric(horizontal: defaultMargin),
         child: Column(
           children: [
             // NOTE: EMBLEM
@@ -50,7 +51,7 @@ class DetailPage extends StatelessWidget {
               margin: EdgeInsets.only(
                 top: 30,
               ),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/icon_emblem.png'),
                 ),
@@ -90,8 +91,8 @@ class DetailPage extends StatelessWidget {
                       Container(
                         width: 20,
                         height: 20,
-                        margin: const EdgeInsets.only(right: 5),
-                        decoration: const BoxDecoration(
+                        margin: EdgeInsets.only(right: 5),
+                        decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('assets/icon_star.png'),
                           ),
@@ -214,7 +215,12 @@ class DetailPage extends StatelessWidget {
                   // NOTE: BOOK BUTTON
                   CustomButton(
                     title: "Book Now",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ChooseSeatPage()));
+                    },
                     width: 170,
                   )
                 ],

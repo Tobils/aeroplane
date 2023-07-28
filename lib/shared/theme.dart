@@ -5,8 +5,8 @@ const double defaultMargin = 24.00;
 const double defaultRadius = 17.00;
 
 const Color kPrimaryColor = Color(0xff5C40CC);
-// const Color kBlackColor = Color(0xff1F1449);
-const Color kBlackColor = Color(0x00000);
+const Color kBlackColor = Color(0xff1F1449);
+// const Color kBlackColor = Color(0x00000);
 const Color kWhiteColor = Color(0xffFFFFFF);
 const Color kGreyColor = Color(0xff9698A9);
 const Color kGreenColor = Color(0xff0EC3AE);
@@ -14,6 +14,8 @@ const Color kRedColor = Color(0xffEB70A5);
 const Color kBackgroundColor = Color(0xffFAFAFA);
 const Color kInactiveColor = Color(0xffDBD7EC);
 const Color kTransparentColor = Colors.transparent;
+const Color kUnavailableColor = Color(0xffEBECF1);
+const Color kAvailableColor = Color(0xffE0D9FF);
 
 TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);
 TextStyle whiteTextStyle = GoogleFonts.poppins(color: kWhiteColor);
