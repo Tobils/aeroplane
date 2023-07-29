@@ -322,50 +322,44 @@ class ChooseSeatPage extends StatelessWidget {
             // NOTE: SUMMARY
             Container(
               margin: EdgeInsets.only(top: 30),
-              child: Column(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // NOTE: selected seat
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Your seat',
-                        style: greyTextStyle.copyWith(
-                          fontWeight: light,
-                          fontSize: 14,
-                        ),
-                      ),
-                      Text(
-                        'A3,B3',
-                        style: blackTextStyle.copyWith(
-                          fontWeight: medium,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
+                  Text(
+                    'Your seat',
+                    style: greyTextStyle.copyWith(
+                      fontWeight: light,
+                      fontSize: 14,
+                    ),
                   ),
-                  SizedBox(
-                    height: 16,
+                  Text(
+                    'A3,B3',
+                    style: blackTextStyle.copyWith(
+                      fontWeight: medium,
+                      fontSize: 16,
+                    ),
                   ),
-                  // NOTE: total
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Total',
-                        style: greyTextStyle.copyWith(
-                          fontWeight: light,
-                          fontSize: 14,
-                        ),
-                      ),
-                      Text(
-                        'IDR 540.000.000',
-                        style: purpleTextStyle.copyWith(
-                          fontWeight: semiBold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
+                ],
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Total',
+                    style: greyTextStyle.copyWith(
+                      fontWeight: light,
+                      fontSize: 14,
+                    ),
+                  ),
+                  Text(
+                    'IDR 540.000.000',
+                    style: purpleTextStyle.copyWith(
+                      fontWeight: semiBold,
+                      fontSize: 16,
+                    ),
                   ),
                 ],
               ),
@@ -377,15 +371,16 @@ class ChooseSeatPage extends StatelessWidget {
 
     Widget checkoutButton() {
       return Container(
-        margin: EdgeInsets.only(top: 30),
-        child: CustomButton(
-          title: "Continue to Checkout",
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CheckoutPage()));
-          },
-          width: 170,
+        margin: EdgeInsets.only(
+          top: 30,
+          bottom: 46,
         ),
+        child: CustomButton(
+            title: "Continue to Checkout",
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => CheckoutPage()));
+            }),
       );
     }
 
