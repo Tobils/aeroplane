@@ -14,10 +14,14 @@ A few resources to get you started if this is your first Flutter project:
 ## Development
 
 ```sh
-# add dependency
+# add dependency for firebase
 flutter pub add firebase_auth
 flutter pub add firebase_core
 flutter pub add cloud_firestore
+
+# add for simplify comparation
+flutter pub add equatable
+
 
 
 ```
