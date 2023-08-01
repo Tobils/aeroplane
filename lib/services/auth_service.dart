@@ -38,4 +38,14 @@ class AuthService {
       throw e;
     }
   }
+
+  Future<String?> signIn({required email, required password}) async {
+    try {
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+      return userCredential.user?.uid;
+    } catch (e) {
+      throw e;
+    }
+  }
 }

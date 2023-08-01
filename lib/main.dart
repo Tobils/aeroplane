@@ -3,6 +3,7 @@ import 'package:aeroplane/cubit/page_cubit.dart';
 import 'package:aeroplane/ui/pages/bonus_page.dart';
 import 'package:aeroplane/ui/pages/get_started_page.dart';
 import 'package:aeroplane/ui/pages/main_page.dart';
+import 'package:aeroplane/ui/pages/sign_in_page.dart';
 import 'package:aeroplane/ui/pages/sign_up_page.dart';
 import 'package:aeroplane/ui/pages/splash_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,6 +31,7 @@ class MayApp extends StatelessWidget {
         routes: {
           '/': (context) => const SplashPage(),
           '/get-started': (context) => const GetStartedPage(),
+          '/sign-in': (context) => SignInPage(),
           '/sign-up': (context) => SignUpPage(),
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
