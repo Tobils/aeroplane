@@ -138,15 +138,17 @@ class SignUpPage extends StatelessWidget {
     }
 
     return Scaffold(
-        backgroundColor: kBackgroundColor,
-        body: SafeArea(
-            child: ListView(
+      backgroundColor: kBackgroundColor,
+      body: SafeArea(
+        child: ListView(
           padding: EdgeInsets.symmetric(horizontal: defaultMargin),
           children: [
             title(),
             inputSection(),
             signinButton(),
           ],
-        )));
+        ),
+      ),
+    );
   }
 }

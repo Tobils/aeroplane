@@ -1,0 +1,4 @@
+Notes
+Service files dalam folder ini bertujuan untuk
+- logic bisnis
+- proses integrasi dengan API 

@@ -76,7 +76,7 @@ class SignInPage extends StatelessWidget {
       }
 
       return Container(
-        margin: EdgeInsets.only(top: defaultMargin),
+        margin: const EdgeInsets.only(top: defaultMargin),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
         decoration: BoxDecoration(
             color: kWhiteColor,
@@ -116,15 +116,17 @@ class SignInPage extends StatelessWidget {
     }
 
     return Scaffold(
-        backgroundColor: kBackgroundColor,
-        body: SafeArea(
-            child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+      backgroundColor: kBackgroundColor,
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: defaultMargin),
           children: [
             title(),
             inputSection(),
             signupButton(),
           ],
-        )));
+        ),
+      ),
+    );
   }
 }

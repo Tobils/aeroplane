@@ -1,4 +1,5 @@
 import 'package:aeroplane/cubit/auth_cubit.dart';
+import 'package:aeroplane/cubit/destination_cubit.dart';
 import 'package:aeroplane/cubit/page_cubit.dart';
 import 'package:aeroplane/ui/pages/bonus_page.dart';
 import 'package:aeroplane/ui/pages/get_started_page.dart';
@@ -25,6 +26,7 @@ class MayApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => PageCubit()),
         BlocProvider(create: (context) => AuthCubit()),
+        BlocProvider(create: (context) => DestinationCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

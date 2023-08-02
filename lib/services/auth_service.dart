@@ -39,11 +39,11 @@ class AuthService {
     }
   }
 
-  Future<String?> signIn({required email, required password}) async {
+  Future<UserModel> signIn({required email, required password}) async {
     try {
       UserCredential userCredential = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
-      return userCredential.user?.uid;
+      return await UserService().getUserById(userCredential.user!.uid);
     } catch (e) {
       throw e;
     }
