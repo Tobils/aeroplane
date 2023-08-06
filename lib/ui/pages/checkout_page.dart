@@ -92,12 +92,12 @@ class CheckoutPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // NOTE: destination
-            const DestinationTile(
-              imageUrl: 'assets/image_destination6.png',
-              name: "Danau Beratan",
-              location: "Singajaya",
-              rating: 4.4,
-            ),
+            // const DestinationTile(
+            //   imageUrl: 'assets/image_destination6.png',
+            //   name: "Danau Beratan",
+            //   location: "Singajaya",
+            //   rating: 4.4,
+            // ),
 
             // NOTE: booking details
             Container(

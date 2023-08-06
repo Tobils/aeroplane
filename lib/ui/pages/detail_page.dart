@@ -1,12 +1,15 @@
+import 'package:aeroplane/models/destination_model.dart';
 import 'package:aeroplane/shared/theme.dart';
 import 'package:aeroplane/ui/pages/choose_seat_page.dart';
 import 'package:aeroplane/ui/widgets/custom_button.dart';
 import 'package:aeroplane/ui/widgets/interest_item.dart';
 import 'package:aeroplane/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  final DestinationModel destination;
+  const DetailPage({required this.destination, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +17,12 @@ class DetailPage extends StatelessWidget {
       return Container(
         width: double.infinity,
         height: 450,
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover,
-                image: AssetImage("assets/image_destination1.png"))),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: NetworkImage(destination.imageUrl),
+          ),
+        ),
       );
     }
 
@@ -48,10 +53,10 @@ class DetailPage extends StatelessWidget {
             Container(
               width: 108,
               height: 24,
-              margin: EdgeInsets.only(
+              margin: const EdgeInsets.only(
                 top: 30,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/icon_emblem.png'),
                 ),
@@ -60,7 +65,7 @@ class DetailPage extends StatelessWidget {
 
             // NOTE: TITLE
             Container(
-              margin: EdgeInsets.only(top: 256),
+              margin: const EdgeInsets.only(top: 256),
               child: Row(
                 children: [
                   Expanded(
@@ -68,7 +73,7 @@ class DetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Lake Ciliwung",
+                          destination.name,
                           style: whiteTextStyle.copyWith(
                             fontSize: 24,
                             fontWeight: semiBold,
@@ -76,7 +81,7 @@ class DetailPage extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                         Text(
-                          'Tangerang',
+                          destination.city,
                           style: whiteTextStyle.copyWith(
                             fontSize: 16,
                             fontWeight: light,
@@ -91,15 +96,15 @@ class DetailPage extends StatelessWidget {
                       Container(
                         width: 20,
                         height: 20,
-                        margin: EdgeInsets.only(right: 5),
-                        decoration: BoxDecoration(
+                        margin: const EdgeInsets.only(right: 5),
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('assets/icon_star.png'),
                           ),
                         ),
                       ),
                       Text(
-                        '4.0',
+                        destination.rating.toString(),
                         style: whiteTextStyle.copyWith(
                           fontWeight: medium,
                           fontSize: 14,
@@ -198,13 +203,17 @@ class DetailPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "IDR 2.500.000",
+                          NumberFormat.currency(
+                            locale: 'id',
+                            symbol: 'IDR ',
+                            decimalDigits: 0,
+                          ).format(destination.price),
                           style: blackTextStyle.copyWith(
                             fontWeight: medium,
                             fontSize: 18,
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Text(
                           "per orang",
                           style: greyTextStyle.copyWith(fontWeight: light),
